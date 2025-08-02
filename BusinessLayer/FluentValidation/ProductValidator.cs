@@ -12,10 +12,9 @@ namespace BusinessLayer.FluentValidation
     {
         public ProductValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().WithMessage("Ürün Adını Boş Geçemezsiniz!");
-            RuleFor(x => x.Name).MinimumLength(3).WithMessage("Ürün Adı En Az 3 Karakter Olmalıdır!");
-            RuleFor(x => x.Stock).NotEmpty().WithMessage("Üürn Stok Sayısı Boş Geçilemez!");
-            RuleFor(x => x.Price).NotEmpty().WithMessage("Ürün Fiyat Bilgisi Boş Geçilemez!");
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Ürün Adı boş olamaz.");
+            RuleFor(x => x.Price).GreaterThan(0).WithMessage("Fiyat 0'dan büyük olmalı.");
+            RuleFor(x => x.Stock).GreaterThanOrEqualTo(0).WithMessage("Stok 0 veya daha fazla olmalı.");
         }
     }
 }

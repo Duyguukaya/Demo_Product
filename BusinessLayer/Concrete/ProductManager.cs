@@ -29,11 +29,12 @@ namespace BusinessLayer.Concrete
             return _productDal.GetById(id);
         }
 
-        public List<Product> TGetList(Product t)
+        public List<Product> TGetList()
         {
             return _productDal.GetList();
 
         }
+
 
         public void TInsert(Product t)
         {

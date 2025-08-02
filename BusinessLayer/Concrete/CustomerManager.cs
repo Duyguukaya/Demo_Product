@@ -27,7 +27,7 @@ namespace BusinessLayer.Concrete
             return _customerDal.GetById(id);
         }
 
-        public List<Customer> TGetList(Customer t)
+        public List<Customer> TGetList()
         {
             return _customerDal.GetList();
         }

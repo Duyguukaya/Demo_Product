@@ -9,12 +9,17 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    internal class CustomerManager : ICustomerService
+    public class CustomerManager : ICustomerService
     {
         ICustomerDal _customerDal;
         public CustomerManager(ICustomerDal customerDal)
         {
             _customerDal = customerDal;
+        }
+
+        public List<Customer> GetCustomersWithJob()
+        {
+            return _customerDal.GetCustomerListWithJob();
         }
 
         public void TDelete(Customer t)
